@@ -29,9 +29,10 @@ python3 ./wsl_ubuntu_start.py
 
 ### Option 2: Clone Repository (if git is available)
 ```bash
-# Clone the repository (requires git to be installed)
+# Clone the repository and switch to the first_script branch
 git clone https://github.com/cloud-plat-org/ubuntu-python-update-start.git
 cd ubuntu-python-update-start
+git checkout first_script
 
 # Run the setup script
 python3 ./wsl_ubuntu_start.py
