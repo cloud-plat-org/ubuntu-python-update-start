@@ -64,14 +64,25 @@ if __name__ == "__main__":
         run_command("sudo apt upgrade -y")
         run_command("sudo apt install -y python3 python3-dev python3-venv")
 
+    # Prompt for virtual environment name
+    VENV_NAME = input("Enter virtual environment name (default: 'venv'): ").strip()
+    if not VENV_NAME:
+        VENV_NAME = 'venv'
+
+    VENV_PATH = f"~/{VENV_NAME}"
+    print(f"Creating virtual environment: {VENV_PATH}")
+
     # Ensure pip3 is installed and upgraded in the virtual environment
-    run_command("python3 -m venv ~/venv")
-    run_command("~/venv/bin/pip install --upgrade pip")
-    run_command("bash -c 'source ~/venv/bin/activate && python3 --version'")
-    run_command("~/venv/bin/python --version")
-    run_command("~/venv/bin/pip --version")
+    run_command(f"python3 -m venv {VENV_PATH}")
+    run_command(f"{VENV_PATH}/bin/pip install --upgrade pip")
+    run_command(f"bash -c 'source {VENV_PATH}/bin/activate && python3 --version'")
+    run_command(f"{VENV_PATH}/bin/python --version")
+    run_command(f"{VENV_PATH}/bin/pip --version")
 
     # Install pylint
-    run_command("~/venv/bin/pip install pylint")
-    run_command("~/venv/bin/pylint --version")
-    run_command("~/venv/bin/pylint wsl_ubuntu_start.py")
+    run_command(f"{VENV_PATH}/bin/pip install pylint")
+    run_command(f"{VENV_PATH}/bin/pylint --version")
+    run_command(f"{VENV_PATH}/bin/pylint wsl_ubuntu_start.py")
+
+    print(f"\nVirtual environment '{VENV_NAME}' created successfully!")
+    print(f"To activate: source {VENV_PATH}/bin/activate")

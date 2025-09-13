@@ -108,10 +108,11 @@ The script automatically detects and configures the environment based on:
 - **Requests**: 2.31.0+dfsg-1ubuntu1.1
 
 ### Virtual Environment
-- **Location**: `~/venv/`
+- **Location**: `~/{user-defined-name}/` (default: `~/venv/`)
 - **Python**: 3.12.3
 - **Pip**: Upgraded to latest version
 - **Packages**: pylint, requests (as needed)
+- **Customization**: Script prompts for environment name during setup
 
 ### Code Quality Standards
 - **Line Length**: Maximum 100 characters
@@ -129,12 +130,16 @@ python3 ./wsl_ubuntu_start.py
 
 ### Manual Virtual Environment Activation
 ```bash
-[source ~/venv/bin/activate]
+# For default environment name 'venv':
+source ~/venv/bin/activate
+
+# For custom environment name (replace 'myenv' with your chosen name):
+source ~/myenv/bin/activate
 ```
 
 ### Running Code Quality Checks
 ```bash
-# Activate virtual environment
+# Activate virtual environment (replace 'venv' with your environment name)
 source ~/venv/bin/activate
 
 # Run pylint on specific file
@@ -146,9 +151,10 @@ pylint *.py
 
 ### Development Workflow
 1. Run the setup script once to initialize the environment
-2. Activate the virtual environment for development
-3. Install additional packages as needed: `~/venv/bin/pip install <package>`
-4. Run pylint regularly to maintain code quality
+2. Choose a custom environment name when prompted (or use default 'venv')
+3. Activate the virtual environment for development
+4. Install additional packages as needed: `~/your-env/bin/pip install <package>`
+5. Run pylint regularly to maintain code quality
 
 ## Environment Detection Logic
 
@@ -166,9 +172,9 @@ The script detects the environment by attempting to access cloud metadata servic
 - **Package Conflicts**: Script handles existing installations gracefully
 
 ### Verification Steps
-1. Check Python version: `~/venv/bin/python --version`
-2. Verify pylint installation: `~/venv/bin/pylint --version`
-3. Run code quality check: `~/venv/bin/pylint wsl_ubuntu_start.py`
+1. Check Python version: `~/your-env/bin/python --version`
+2. Verify pylint installation: `~/your-env/bin/pylint --version`
+3. Run code quality check: `~/your-env/bin/pylint wsl_ubuntu_start.py`
 
 ## Development Environment Details
 
