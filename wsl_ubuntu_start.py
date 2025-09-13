@@ -36,6 +36,9 @@ if __name__ == "__main__":
     # Install essential development tools
     run_command("sudo apt install -y git python3-requests")
 
+    # Clean up unused packages early
+    run_command("sudo apt autoremove -y")
+
     CLOUD_ENV = detect_cloud()
     print(f"Cloud environment: {CLOUD_ENV}")
 
@@ -64,7 +67,7 @@ if __name__ == "__main__":
     # Ensure pip3 is installed and upgraded in the virtual environment
     run_command("python3 -m venv ~/venv")
     run_command("~/venv/bin/pip install --upgrade pip")
-    run_command("source ~/venv/bin/activate && python3 --version")
+    run_command("bash -c 'source ~/venv/bin/activate && python3 --version'")
     run_command("~/venv/bin/python --version")
     run_command("~/venv/bin/pip --version")
 
