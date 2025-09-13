@@ -52,8 +52,8 @@ python3 ./wsl_ubuntu_start.py
 
 ### Cloud Environment Detection
 The script automatically detects and configures the environment based on:
-- **AWS**: Installs AWS CLI and configures repositories
-- **Azure**: Installs Azure CLI and Microsoft repositories  
+- **AWS**: Configures AWS repositories (CLI installation not included)
+- **Azure**: Installs Azure CLI and configures Microsoft repositories  
 - **Local**: Sets up deadsnakes PPA for latest Python versions
 
 ### Code Quality Integration
