@@ -20,14 +20,24 @@ This project provides an automated setup script that prepares an Ubuntu system f
 
 ## Quick Start
 
+### Option 1: Download and Run (Recommended)
 ```bash
-# Clone the repository
+# Download the script directly
+wget https://raw.githubusercontent.com/cloud-plat-org/ubuntu-python-update-start/first_script/wsl_ubuntu_start.py
+python3 ./wsl_ubuntu_start.py
+```
+
+### Option 2: Clone Repository (if git is available)
+```bash
+# Clone the repository (requires git to be installed)
 git clone https://github.com/cloud-plat-org/ubuntu-python-update-start.git
 cd ubuntu-python-update-start
 
 # Run the setup script
 python3 ./wsl_ubuntu_start.py
 ```
+
+**Note**: The script will automatically install git and other dependencies during setup.
 
 ## Project Files
 
